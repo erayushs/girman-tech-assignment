@@ -10,7 +10,7 @@ const Navbar = () => {
               className="w-[62.26px] h-[62.26px]"
             />
             <div className="flex flex-col ml-3 justify-center items-center font-heading">
-              <h1 className="text-[37.23px] font-bold leading-10">Girman</h1>
+              <h3 className="text-[37.23px] font-bold leading-10">Girman</h3>
               <span className="text-[11.24px] font-semibold leading-6 tracking-[4.6px] ml-1">
                 TECHNOLOGIES
               </span>
