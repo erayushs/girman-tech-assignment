@@ -5,7 +5,7 @@ const Navbar = () => {
         <div>
           <div className="flex">
             <img
-              src="/girman-logo.svg"
+              src="/small-girman-logo.svg"
               alt="girman logo"
               className="w-[62.26px] h-[62.26px]"
             />
