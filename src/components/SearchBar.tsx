@@ -2,7 +2,7 @@ import { Input } from "@/components/ui/input";
 
 export default function SearchBar() {
   return (
-    <div className="relative w-full">
+    <div className="relative max-w-full lg:mx-0 mx-[40px]">
       <img
         src="/magnifying-glass.svg"
         alt="magnifying glass icon"
@@ -11,7 +11,7 @@ export default function SearchBar() {
       <Input
         type="search"
         placeholder="Search"
-        className="pl-9 bg-white h-[50px] lg:text-[18px] rounded-[12px] border-[#D7D7EA]"
+        className="pl-9 bg-white lg:h-[50px] h-[40px] lg:text-[18px] rounded-[12px] border-[#D7D7EA]"
       />
     </div>
   );
