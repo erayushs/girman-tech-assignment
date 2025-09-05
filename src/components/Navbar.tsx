@@ -57,7 +57,7 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-
+        {/* Mobile Navigation */}
         <nav className="lg:hidden relative">
           <img
             src="/menu.svg"
