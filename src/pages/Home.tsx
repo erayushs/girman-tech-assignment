@@ -40,8 +40,8 @@ const Home = () => {
           <div className="mt-[40px] flex flex-col items-center gap-[22px]">
             {filteredList.length > 0 ? (
               <div className="flex flex-wrap gap-[22px]">
-                {filteredList.map((user, index) => (
-                  <ProfileCard key={index} userDetails={user} />
+                {filteredList.map((user) => (
+                  <ProfileCard key={user.id} userDetails={user} />
                 ))}
               </div>
             ) : (
