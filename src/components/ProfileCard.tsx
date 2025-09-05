@@ -12,7 +12,17 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-const ProfileCard = () => {
+type ProfileCardProps = {
+  userDetails: {
+    first_name: string;
+    last_name: string;
+    city: string;
+    contact_number: string;
+  };
+};
+
+const ProfileCard = ({ userDetails }: ProfileCardProps) => {
+  if (!userDetails) return null;
   return (
     <div className="lg:w-[388.57px] lg:h-[312.57px] lg:mx-0 mx-[40px] w-[313px] h-[236.21px] rounded-[18.29px] bg-white p-[27px] flex flex-col">
       <div className="lg:w-[89.15px] lg:h-[89.15px] w-[67.45px] h-[67.45px]">
@@ -27,7 +37,7 @@ const ProfileCard = () => {
 
       <div>
         <h3 className="font-sans font-semibold lg:text-[36.57px] text-[27.27px]">
-          Anjali Kejriwal
+          {userDetails.first_name} {userDetails.last_name}
         </h3>
         <div className="flex gap-2">
           <img
@@ -36,7 +46,7 @@ const ProfileCard = () => {
             className="w-[8.65px] h-[11.24px] lg:w-[11.43px] lg:h-[14.86px] mt-[1px]"
           />
           <span className="lg:text-[11.43px] text-[8.65px] font-medium text-[#425763]">
-            Mumbai
+            {userDetails.city}
           </span>
         </div>
 
@@ -49,7 +59,7 @@ const ProfileCard = () => {
                 className="w-[11.24px] h-[11.24px] lg:w-[14.86px] lg:h-[14.86px] lg:mt-1 mt-[2px]"
               />
               <span className="lg:text-[13.71px] text-[10.38px] font-semibold">
-                90999 80888
+                {userDetails.contact_number}
               </span>
             </div>
 
