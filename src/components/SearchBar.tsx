@@ -1,6 +1,18 @@
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
-export default function SearchBar() {
+type SearchBarProps = {
+  onTyping?: (typing: boolean) => void;
+};
+
+export default function SearchBar({ onTyping }: SearchBarProps) {
+  const [value, setValue] = useState("");
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setValue(e.target.value);
+    onTyping?.(e.target.value.length > 0);
+  }
+
   return (
     <div className="relative max-w-full lg:mx-0 mx-[40px]">
       <img
@@ -12,6 +24,8 @@ export default function SearchBar() {
         type="search"
         placeholder="Search"
         className="pl-9 bg-white lg:h-[50px] h-[40px] lg:text-[18px] rounded-[12px] border-[#D7D7EA]"
+        value={value}
+        onChange={handleChange}
       />
     </div>
   );
