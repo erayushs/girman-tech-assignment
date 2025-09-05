@@ -35,13 +35,25 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="#">WEBSITE</a>
+              <a
+                href="https://www.girmantech.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WEBSITE
+              </a>
             </li>
             <li>
-              <a href="#">LINKEDIN</a>
+              <a
+                href="https://www.linkedin.com/company/girmantech/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LINKEDIN
+              </a>
             </li>
             <li>
-              <a href="#">CONTACT</a>
+              <a href="mailto:contact@girmantech.com">CONTACT</a>
             </li>
           </ul>
         </nav>
@@ -65,13 +77,25 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#">WEBSITE</a>
+                  <a
+                    href="https://www.girmantech.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WEBSITE
+                  </a>
                 </li>
                 <li>
-                  <a href="#">LINKEDIN</a>
+                  <a
+                    href="https://www.linkedin.com/company/girmantech/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LINKEDIN
+                  </a>
                 </li>
                 <li>
-                  <a href="#">CONTACT</a>
+                  <a href="mailto:contact@girmantech.com">CONTACT</a>
                 </li>
               </ul>
             </div>
