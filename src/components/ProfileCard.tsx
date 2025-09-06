@@ -9,8 +9,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { X } from "lucide-react";
 
 type ProfileCardProps = {
   userDetails: {
@@ -70,46 +70,60 @@ const ProfileCard = ({ userDetails }: ProfileCardProps) => {
 
           <div className="mt-2">
             <Dialog>
-              <form>
-                <DialogTrigger asChild>
-                  <Button className="lg:w-[136.57px] lg:h-[45.71px] w-[103.67px] h-[34.59px] lg:text-[1rem] text-[12.11px]">
-                    Fetch Details
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px]">
-                  <DialogHeader>
-                    <DialogTitle>Edit profile</DialogTitle>
-                    <DialogDescription>
-                      Make changes to your profile here. Click save when
-                      you&apos;re done.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="grid gap-4">
-                    <div className="grid gap-3">
-                      <Label htmlFor="name-1">Name</Label>
-                      <Input
-                        id="name-1"
-                        name="name"
-                        defaultValue="Pedro Duarte"
-                      />
-                    </div>
-                    <div className="grid gap-3">
-                      <Label htmlFor="username-1">Username</Label>
-                      <Input
-                        id="username-1"
-                        name="username"
-                        defaultValue="@peduarte"
-                      />
-                    </div>
-                  </div>
-                  <DialogFooter>
-                    <DialogClose asChild>
-                      <Button variant="outline">Cancel</Button>
+              <DialogTrigger asChild>
+                <Button className="lg:w-[136.57px] lg:h-[45.71px] w-[103.67px] h-[34.59px] lg:text-[1rem] text-[12.11px]">
+                  Fetch Details
+                </Button>
+              </DialogTrigger>
+
+              <DialogContent className="max-w-[299px] h-[477px] lg:max-w-[512px] lg:h-[475px]">
+                <DialogHeader>
+                  <div className="flex justify-between items-center">
+                    <DialogTitle className="text-[22px] lg:text-2xl font-semibold self-start">
+                      Fetch Details
+                    </DialogTitle>
+                    <DialogClose>
+                      <div className="w-[24px] h-[24px] mt-[-4px]">
+                        <X className="lg:hidden w-full h-full" />
+                      </div>
                     </DialogClose>
-                    <Button type="submit">Save changes</Button>
-                  </DialogFooter>
-                </DialogContent>
-              </form>
+                  </div>
+
+                  <DialogDescription className="text-left lg:text-sm text-[12px]">
+                    Here are the details of following employee.
+                  </DialogDescription>
+                </DialogHeader>
+
+                <div className="flex flex-col lg:gap-[2px] gap-[1px]">
+                  <Label className="text-xs lg:text-sm">
+                    Name: {userDetails.first_name} {userDetails.last_name}
+                  </Label>
+                  <Label className="text-xs lg:text-sm">
+                    Location: {userDetails.city}
+                  </Label>
+                  <Label className="text-xs lg:text-sm">
+                    Contact Number: {userDetails.contact_number}
+                  </Label>
+                  <Label className="mt-2 text-xs lg:text-sm">
+                    Profile Image:
+                  </Label>
+
+                  <div className="lg:w-[207px] lg:h-[207px] my-[6px] lg:mb-0 mb-40 lg:mt-2 mt-4">
+                    <img src="/large-profile-imge.svg" alt="profile image" />
+                  </div>
+                </div>
+
+                <DialogFooter>
+                  <DialogClose asChild>
+                    <Button
+                      variant="outline"
+                      className="lg:block hidden mt-[-12px]"
+                    >
+                      Close
+                    </Button>
+                  </DialogClose>
+                </DialogFooter>
+              </DialogContent>
             </Dialog>
           </div>
         </div>
