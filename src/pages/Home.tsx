@@ -7,25 +7,42 @@ const Home = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredList, setFilteredList] = useState<User[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleTyping = (typing: boolean) => {
     setIsTyping(typing);
-    if (!typing) {
+    if (typing) {
+      setError(null);
+      setSubmitted(false);
+    } else {
       setSearchTerm("");
     }
   };
 
+  const handleSubmit = (query: string) => {
+    setSubmitted(true);
+    setSearchTerm(query);
+  };
+
   useEffect(() => {
-    if (searchTerm.trim() === "") return;
-    setFilteredList(
-      users.filter(
-        (user) => user.first_name.toLowerCase() === searchTerm.toLowerCase()
-      )
-    );
+    try {
+      if (searchTerm.trim() === "") {
+        setFilteredList([]);
+        return;
+      }
+      setFilteredList(
+        users.filter(
+          (user) => user.first_name.toLowerCase() === searchTerm.toLowerCase()
+        )
+      );
+    } catch (err) {
+      setError("Something went wrong while searching.");
+    }
   }, [searchTerm]);
 
   return (
-    <div className="flex justify-center lg:mt-[150px] mt-[40px]">
+    <div className="flex items-center justify-center lg:mt-[150px] mt-[40px] lg:flex-col">
       <div className="w-[800px] h-[255px] flex flex-col justify-between">
         {!isTyping && (
           <div className="lg:flex justify-between hidden">
@@ -34,7 +51,7 @@ const Home = () => {
           </div>
         )}
 
-        <SearchBar onTyping={handleTyping} onSubmit={setSearchTerm} />
+        <SearchBar onTyping={handleTyping} onSubmit={handleSubmit} />
 
         {searchTerm && (
           <div className="mt-[40px] flex flex-col items-center gap-[22px]">
@@ -57,6 +74,11 @@ const Home = () => {
           </div>
         )}
       </div>
+      {submitted && searchTerm.trim() === "" && (
+        <p className="text-red-400 text-center mt-4 fixed top-[200px] lg:top-[600px]">
+          Please enter a valid name.
+        </p>
+      )}
     </div>
   );
 };
