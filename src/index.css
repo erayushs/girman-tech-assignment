@@ -134,3 +134,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  [data-slot="dialog-close"].absolute {
+    display: none !important;
+  }
+}
