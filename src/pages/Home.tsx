@@ -75,7 +75,7 @@ const Home = () => {
         )}
       </div>
       {submitted && searchTerm.trim() === "" && (
-        <p className="text-red-400 text-center mt-4">
+        <p className="text-red-400 text-center mt-4 fixed top-[200px] lg:top-[600px]">
           Please enter a valid name.
         </p>
       )}
