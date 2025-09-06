@@ -67,11 +67,10 @@ npm run preview
 src/
 ├── components/   # Reusable UI components
 ├── pages/        # Home and Search Results pages
-├── context/      # Context provider for user data
 ├── lib/          # Helper functions (e.g., search filter)
 ├── assets/       # Static assets (if needed)
-public/
-└── users.json    # Local user data
+utils/
+└── users.ts    # Local user data
 ```
 
 ```

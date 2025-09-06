@@ -7,13 +7,11 @@ const Home = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredList, setFilteredList] = useState<User[]>([]);
-  const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
   const handleTyping = (typing: boolean) => {
     setIsTyping(typing);
     if (typing) {
-      setError(null);
       setSubmitted(false);
     } else {
       setSearchTerm("");
@@ -37,7 +35,7 @@ const Home = () => {
         )
       );
     } catch (err) {
-      setError("Something went wrong while searching.");
+      console.error(err);
     }
   }, [searchTerm]);
 
