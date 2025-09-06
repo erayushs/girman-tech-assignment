@@ -39,6 +39,7 @@ const Navbar = () => {
                 href="https://www.girmantech.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:text-[#3063E6]"
               >
                 WEBSITE
               </a>
@@ -48,12 +49,18 @@ const Navbar = () => {
                 href="https://www.linkedin.com/company/girmantech/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:text-[#3063E6]"
               >
                 LINKEDIN
               </a>
             </li>
             <li>
-              <a href="mailto:contact@girmantech.com">CONTACT</a>
+              <a
+                href="mailto:contact@girmantech.com"
+                className="hover:text-[#3063E6]"
+              >
+                CONTACT
+              </a>
             </li>
           </ul>
         </nav>
