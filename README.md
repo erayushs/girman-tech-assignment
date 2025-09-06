@@ -77,7 +77,7 @@ utils/
 🌐 Deployment
 
 The app is deployed on Vercel:
-🔗 Live Demo - *Coming soon*
+🔗 Live Demo - [https://girman-tech-assignment-chi.vercel.app/](https://girman-tech-assignment-chi.vercel.app/)
 ```
 
 ```

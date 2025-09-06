@@ -31,7 +31,7 @@ export default function SearchBar({ onTyping, onSubmit }: SearchBarProps) {
       <Input
         type="search"
         placeholder="Search"
-        className="pl-9 bg-white lg:h-[50px] h-[40px] lg:text-[18px] rounded-[12px] border-[#D7D7EA]"
+        className="pl-9 bg-white lg:h-[50px] h-[40px] lg:text-[18px] rounded-[12px] border-[#D7D7EA] text-[#71717A]"
         value={value}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
